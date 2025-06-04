@@ -1,7 +1,7 @@
-import { BookApiAdapter } from "./adapters/BookApiAdapter";
-import { Book } from "./types";
-import { QUERY_TYPES } from "./constants/queryTypes";
-import { nonEmptyStringValidator, yearValidator, limitNumberValidator } from "./utils/validators";
+import { BookApiAdapter } from "../adapters/BookApiAdapter";
+import { Book } from "../types";
+import { QUERY_TYPES } from "../constants/queryTypes";
+import { nonEmptyStringValidator, yearValidator, limitNumberValidator } from "../utils/validators";
 
 
 export class BookSearchApiClient {

@@ -1,21 +1,26 @@
-import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
+import { createHttpClient } from "./config/httpClientFactory";
 import { HttpBookApiAdapter } from "./adapters/HttpBookApiAdapter";
-import { BookSearchApiClient } from "./BookSearchApiClient";
+import { BookSearchApiClient } from "./client/BookSearchApiClient";
+
 
 async function main(): Promise<void> {
-    const httpClient = axios.create({
-        baseURL: "https://api.example.com",
-        timeout: 5000,
-        headers: {
-            "Content-Type": "application/json"
-        }
-    });
-
+    const httpClient = createHttpClient();
     const adapter = new HttpBookApiAdapter(httpClient);
     const client = new BookSearchApiClient(adapter);
 
-    const books = await client.getBooksByAuthor("Author A", 5);
-    console.log("Books found:", books);
+     try {
+       const books = await client.getBooksByAuthor("Author A", 5);
+
+       if (!books?.length) {
+         console.log("No books found for the specified author.");
+       } else {
+         console.log("Books found:", books);
+       }
+     } catch (err) {
+       console.error("Failed to fetch books from the API.", err);
+     }
 }
 
 main().catch((err) => {

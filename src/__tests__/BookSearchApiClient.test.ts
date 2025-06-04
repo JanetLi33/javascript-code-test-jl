@@ -1,4 +1,4 @@
-import { BookSearchApiClient } from "../BookSearchApiClient";
+import { BookSearchApiClient } from "../client/BookSearchApiClient";
 import { BookApiAdapter } from "../adapters/BookApiAdapter";
 import { Book } from "../types";
 

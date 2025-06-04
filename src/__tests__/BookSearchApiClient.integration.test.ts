@@ -1,6 +1,6 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
-import { BookSearchApiClient } from "../BookSearchApiClient";
+import { BookSearchApiClient } from "../client/BookSearchApiClient";
 import { HttpBookApiAdapter } from "../adapters/HttpBookApiAdapter";
 import { Book } from "../types";
 import { EXAMPLE_BOOK_API_ROUTES } from "../constants/apiRoutes";
