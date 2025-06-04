@@ -1,6 +1,6 @@
 # Book Search API Client
 
-A TypeScript client for searching books by author, publisher, or year, with support for multiple book data APIs. Refactored from a previous BookSearchApiClient class for improved modularity and extensibility. 
+A TypeScript client for searching books by author, publisher, or year, with support for multiple book data APIs. Refactored from a previous BookSearchApiClient class (see: https://github.com/edfenergy-stevebowerman/javascript-code-test/) for improved modularity and extensibility. 
 
 ## Implementation  
 
@@ -14,6 +14,11 @@ A TypeScript client for searching books by author, publisher, or year, with supp
 ## Getting Started
 
 ```bash
+# 1. Install dependencies
 npm install
+
+# 2. Compile TypeScript to JavaScript
 npm run build
+
+# 3. Run unit tests with coverage report
 npm test
